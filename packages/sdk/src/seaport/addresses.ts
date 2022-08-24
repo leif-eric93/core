@@ -1,5 +1,4 @@
 import { ChainIdToAddress, Network } from "../utils";
-import {Eth, Routers, Usdc, Weth} from "../common/addresses";
 
 export const Exchange: ChainIdToAddress = {
   [Network.Ethereum]: "0x00000000006c3852cbef3e08e8df289169ede581",
