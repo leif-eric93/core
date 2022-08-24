@@ -91,17 +91,3 @@ export const addToConfig = ({chainId, wrappedNative, usdc, router }:{chainId: nu
   Usdc[chainId] = usdc;
   Routers[chainId] = {[router]: "reservoir.tools"};
 }
-
-/*
-chainId: number
-WETH: string //wrapped native
-USDC: string
-Router: string
-
-seaport: Seaport ({
-  exchange: string;
-  conduitController: string;
-
-})
-
- */
