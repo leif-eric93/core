@@ -1,4 +1,5 @@
 import { ChainIdToAddress, Network } from "../utils";
+import {Eth, Routers, Usdc, Weth} from "../common/addresses";
 
 export const Exchange: ChainIdToAddress = {
   [Network.Ethereum]: "0x00000000006c3852cbef3e08e8df289169ede581",
@@ -34,3 +35,8 @@ export const PausableZone: ChainIdToAddress = {
   [Network.Ethereum]: "0x004c00500000ad104d7dbd00e3ae0a5c00560c00",
   [Network.EthereumRinkeby]: "0x00000000e88fe2628ebc5da81d2b3cead633e89e",
 };
+
+export const addToConfig = ({chainId, seaportExchange, seaportConduitController}:{chainId: number, seaportExchange: string, seaportConduitController: string} ) : void => {
+  Exchange[chainId] = seaportExchange;
+  ConduitController[chainId] = seaportConduitController;
+}

@@ -16,6 +16,15 @@ import * as Zora from "./zora";
 
 import * as Router from "./router";
 
+/*
+Allows us to overwrite necessary config-props for not-yet supported networks or local setups.
+The current scope targets on-chain setup of a single reservoir router and seaport.
+*/
+const addToConfig = ({chainId, wrappedNative, usdc, router, seaportExchange, seaportConduitController}:{chainId: number,wrappedNative:string, usdc:string, router:string, seaportExchange: string, seaportConduitController: string} ) : void => {
+  Common.Addresses.addToConfig({chainId, wrappedNative, usdc, router});
+  Seaport.Addresses.addToConfig({chainId,seaportExchange,seaportConduitController});
+}
+
 export {
   Common,
   CryptoPunks,
@@ -33,4 +42,5 @@ export {
   ZeroExV4,
   Zora,
   Router,
+  addToConfig
 };

@@ -84,3 +84,24 @@ export const Routers: ChainIdToAddressMap = {
     "0xf44caa746d184e6fba3071e8adbf9c041620fe44": "reservoir.tools",
   },
 };
+
+export const addToConfig = ({chainId, wrappedNative, usdc, router }:{chainId: number, wrappedNative:string, usdc:string, router:string } ) : void => {
+  Eth[chainId] = AddressZero;
+  Weth[chainId] = wrappedNative;
+  Usdc[chainId] = usdc;
+  Routers[chainId] = {[router]: "reservoir.tools"};
+}
+
+/*
+chainId: number
+WETH: string //wrapped native
+USDC: string
+Router: string
+
+seaport: Seaport ({
+  exchange: string;
+  conduitController: string;
+
+})
+
+ */
